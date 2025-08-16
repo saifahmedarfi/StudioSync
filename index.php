@@ -22,18 +22,34 @@
 </div>
     <ul>
       <li><a href="index.php">Home</a></li>
-      <li><a href="#">Hire Artist</a></li>
-      <li><a href="#">Get Hired</a></li>
-      <li><a href="#">About Us</a></li>
+      <li><a href="loginashirer.php">Hire Artist</a></li>
+      <li><a href="loginasartist.php">Get Hired</a></li>
+      <li><a href="about.php">About Us</a></li>
     </ul>
+
+
 <div class="auth-buttons">
-  <a href="login.php">
-    <button class="signin-btn">Sign In</button>
-  </a>
-  <a href="signup.php">
-    <button class="signup-btn">Sign Up</button>
-  </a>
+  <!-- Sign In Dropdown -->
+  <div class="dropdown">
+    <button class="signin-btn" id="signinDropdownBtn">Sign In</button>
+    <div class="dropdown-content" id="signinDropdown">
+      <a href="loginashirer.php">Login as Hirer</a>
+      <a href="loginasartist.php">Login as Artist</a>
+      <a href="#" onclick="adminLogin()">Admin</a>
+    </div>
+  </div>
+
+  <!-- Sign Up Dropdown -->
+  <div class="dropdown">
+    <button class="signup-btn" id="signupDropdownBtn">Sign Up</button>
+    <div class="dropdown-content" id="signupDropdown">
+      <a href="loginashirer.php">As Hirer</a>
+      <a href="loginasartist.php">As Artist</a>
+    </div>
+  </div>
 </div>
+
+
 
   </nav>
 
@@ -112,9 +128,9 @@ Because every great performance begins with the right connection."
       <h4>Quick Links</h4>
       <ul>
         <li><a href="index.php">Home</a></li>
-        <li><a href="#">Hire Artist</a></li>
-        <li><a href="#">Get Hired</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="loginashirer.php">Hire Artist</a></li>
+        <li><a href="loginasartist.php">Get Hired</a></li>
+        <li><a href="about.php">About Us</a></li>
       </ul>
     </div>
 
@@ -470,9 +486,76 @@ Because every great performance begins with the right connection."
   color: #999;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1e1e1e;
+  min-width: 180px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+  z-index: 100;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #333;
+}
+
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
+
   </style>
 
   <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+<script>
+function toggleDropdown(buttonId, dropdownClass) {
+  document.getElementById(buttonId).addEventListener("click", function(event) {
+    event.preventDefault();
+    this.parentElement.classList.toggle("show");
+  });
+}
+
+// Init both
+toggleDropdown("signinDropdownBtn", "dropdown");
+toggleDropdown("signupDropdownBtn", "dropdown");
+
+// Close dropdowns when clicking outside
+window.addEventListener("click", function(event) {
+  if (!event.target.matches("#signinDropdownBtn") &&
+      !event.target.matches("#signupDropdownBtn")) {
+    document.querySelectorAll(".dropdown").forEach(function(drop) {
+      drop.classList.remove("show");
+    });
+  }
+});
+
+function adminLogin() {
+  let pass = prompt("Enter Admin Password:");
+  if (pass === "admin123") {
+    window.location.href = "admin/dashboard.php";
+  } else if (pass !== null) {
+    alert("Incorrect password!");
+  }
+}
+</script>
+
+
+
 </body>
 </html>

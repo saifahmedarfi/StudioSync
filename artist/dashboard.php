@@ -239,9 +239,9 @@ nav.navbar {
   <div class="nav-center">
     <ul>
       <li><a href="../index.php">Home</a></li>
-      <li><a href="#">Hire Artist</a></li>
-      <li><a href="#">Get Hired</a></li>
-      <li><a href="#">About Us</a></li>
+      <li><a href="../loginashirer.php">Hire Artist</a></li>
+      <li><a href="../loginasartist.php">Get Hired</a></li>
+      <li><a href="../about.php">About Us</a></li>
     </ul>
   </div>
 <button class="logout-btn" onclick="window.location.href='../index.php'">Logout</button>

@@ -17,7 +17,7 @@
 
 
   <style>
-    /* Base & navbar styles - consistent with your code */
+    /* Base & navbar styles - consistent with code */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Inter', sans-serif;
@@ -219,9 +219,9 @@ button[type="button"]:hover {
 
     <ul>
       <li><a href="index.php">Home</a></li>
-      <li><a href="#">Hire Artist</a></li>
-      <li><a href="#">Get Hired</a></li>
-      <li><a href="#">About Us</a></li>
+      <li><a href="loginashirer.php">Hire Artist</a></li>
+      <li><a href="loginasartist.php">Get Hired</a></li>
+      <li><a href="about.php">About Us</a></li>
     </ul>
     <div class="auth-buttons">
       <a href="login.php"><button class="signin-btn">Sign In</button></a>
@@ -229,36 +229,24 @@ button[type="button"]:hover {
     </div>
   </nav>
 
-  <main>
-    <section class="signup-container" aria-label="Hirer signup form">
-      <h2>Create Hirer Account</h2>
-      <p>Connect with talented musicians to bring your vision to life.</p>
-      <form action="hirer_signup_action.php" method="POST" autocomplete="off" novalidate>
-        <input type="text" name="username" placeholder="Username" required minlength="3" maxlength="30" />
-        <input type="text" name="company_name" placeholder="Company/Organization Name" required maxlength="50" />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9+\-\s]{7,15}" title="Enter valid phone number" />
-        <select name="industry" required>
-          <option value="" disabled selected>Select Industry</option>
-          <option value="event_management">Event Management</option>
-          <option value="record_label">Record Label</option>
-          <option value="media">Media</option>
-          <option value="corporate">Corporate</option>
-          <option value="other">Other</option>
-        </select>
-        <input type="password" name="password" placeholder="Password" required minlength="6" />
-        <input type="password" name="confirm_password" placeholder="Confirm Password" required minlength="6" />
-<button type="button" class="styled-button" onclick="window.location.href='hirer/hirer_profile.php'">
-  Sign Up
-</button>
-      </form>
-      <p class="bottom-text">
-        Already have an account? <a href="loginashirer.php">Sign In</a>
-      </p>
-    </section>
-  </main>
+<main>
+  <section class="signup-container" aria-label="Hirer signup form">
+    <h2>Create Hirer Account</h2>
+    <p>Connect with talented musicians to bring your vision to life.</p>
+    <form action="hirer_signup_action.php" method="POST" autocomplete="off">
+      <input type="text" name="hirer_id" placeholder="Hirer ID" required minlength="3" maxlength="30" />
+      <input type="text" name="username" placeholder="Username" required minlength="3" maxlength="30" />
+      <input type="text" name="company_name" placeholder="Organization Name" required maxlength="50" />
+      <input type="tel" name="phone" placeholder="Contact" pattern="[0-9+\-\s]{7,15}" title="Enter valid phone number" required />
+      <input type="password" name="password" placeholder="Password" required minlength="6" />
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required minlength="6" />
+      <button type="submit" class="styled-button">Sign Up</button>
+    </form>
+    <p class="bottom-text">
+      Already have an account? <a href="loginashirer.php">Sign In</a>
+    </p>
+  </section>
+</main>
 
 </body>
 </html>
-
-

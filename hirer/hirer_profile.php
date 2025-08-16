@@ -239,9 +239,9 @@ nav.navbar {
   <div class="nav-center">
     <ul>
       <li><a href="../index.php">Home</a></li>
-      <li><a href="#">Hire Artist</a></li>
-      <li><a href="#">Get Hired</a></li>
-      <li><a href="#">About Us</a></li>
+      <li><a href="../loginashirer.php">Hire Artist</a></li>
+      <li><a href="../loginasartist.php">Get Hired</a></li>
+      <li><a href="../about.php">About Us</a></li>
     </ul>
   </div>
 <button class="logout-btn" onclick="window.location.href='../index.php'">Logout</button>
@@ -259,12 +259,10 @@ nav.navbar {
 
     <section class="profile-details">
       <table>
-        <tr><th>About Company</th><td>Passionate about the bridging of artists and gigs and showcasing it with elegance around the globe.</td></tr>
-        <tr><th>Location</th><td>Gulshan-1, BD</td></tr>
+        <tr><th>Hirer ID</th><td>6969</td></tr>
+        <tr><th>Username</th><td>mohapurushinc</td></tr>
         <tr><th>Company Type</th><td>Media</td></tr>
-        <tr><th>Hiring Terms</th><td>Flexible with advance notice</td></tr>
-        <tr><th>Services Offered</th><td>Event Management, Artist Promotion, Talent Booking, Sound Engineer etc.</td></tr>
-        <tr><th>Press and Media</th><td>featured in Daily Star</td></tr>
+        <tr><th>Organization Name</th><td>Mohapurush Inc</td></tr>
         <tr><th>Contact</th><td>agency@mohapurush.Inc. |096587932</td></tr>
       </table>
 
